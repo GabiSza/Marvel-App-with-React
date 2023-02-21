@@ -2,9 +2,9 @@
 
 ## Description
 
-This App is for Marvel fans who want to search for Marvel movies that include their favorite Marvel characters.
+This App is for Marvel fans who want to search for Marvel movies by character and see a list of all Marvel movies featuring that character.  
 
-It will also include a timeline of Marvel movies based not on release date, but on the date of the movie in the Marvel timeline.
+Future / hoped for features will include: a timeline of Marvel movies based on chronological - within the Marvel Cinematic Universe - date, rather than release date; a gallery page of Marvel movie images; and an additional search page that returns suggested similar movies.
 
 ### Dependencies
 
@@ -21,7 +21,12 @@ Go to client folder `cd client` and run `nvm use 16` followed by `npm install` t
 
 ### Flow Diagram
 
-Add screenshot of app flow, incorporating front and back end and an external API.
+Add screenshots of app flow, incorporating front and back end and an external API.
+
+Homepage with form/search feature for favorite character movies.
+Additional page featuring a timeline of Marvel movies.
+Additional page featuring recomendations of similar movies.
+Additional page featuring gallery of Marvel images.
 
 ### API Routes
 
