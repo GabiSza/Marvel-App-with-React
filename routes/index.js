@@ -12,7 +12,7 @@ router.get("/marvel", async function (req, res, next) {
 });
 
 router.post("/marvel", async function (req, res, next) {
-  const { name } = req.body; // GETS DATA RE MOVIE ADDED
+  const { name } = req.body; // GETS DATA RE FAVORITE ADDED
   const sql = `INSERT INTO marvel (name)
                 VALUES('${name})`;
 
