@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+moviemovieimport "./App.css";
 // IMPORT COMPONENTS HERE import ".components/ADDCOMPONENTS.css";
 // MAYBE FORM, FAVORITE CHARACTERS, PRELOADED TIMELINE OF MARVEL MOVIES TO BE STORED ON DATABASE
 import "./Components/MarvelGallery";
@@ -7,8 +7,9 @@ import "./Components/MarvelList";
 import "./Components/MarvelRecs";
 import "./Components/MarvelTimeline";
 
-const HOME_URL = "https://api.themoviedb.org";
-const API_KEY = "ccf583c0e68ae4c777227c8277f2a8b7";
+// MAYBE USE LATER...
+//const HOME_URL = "https://api.themoviedb.org/3/";
+//const API_KEY = "ccf583c0e68ae4c777227c8277f2a8b7";
 
 function App() {
   // ARRAY OF MOVIES FEATURING CHARACTER SEARCHED
@@ -21,15 +22,21 @@ function App() {
   async function fetchMovieData() {
     // UGH...
     try {
-      const response = await fetch(URL);
+      const API_KEY = "ccf583c0e68ae4c777227c8277f2a8b7";
+      const response = await fetch(`https://api.themoviedb.org/3/search/movie?${API_KEY}&media_type=movie`);
       const data = await response.json();
-      setMovies(data);
+      setMovies(resp.data.results);
     } catch (err) {
       console.log("Error");
     }
   }
 
-  //const useEffect(){};
+  // API 
+  // GET SEARCH MOVIES https://api.themoviedb.org/3/search/movie?api_key=API KEY HERE&language=en-US&query=KEYWORDHERE
+
+  //const useEffect(){
+  //  fetchMovieData("");
+  // };
 
   //const handleChange(){};
 
