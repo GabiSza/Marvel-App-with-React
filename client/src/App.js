@@ -2,32 +2,30 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 // IMPORT COMPONENTS HERE - FORM, LIST, TIMELINE, GALLERY, RECOMMENDATIONS, ETC.
-//import MarvelGallery from "./Components/MarvelGallery";
-//import MarvelList from "./Components/MarvelList";
-//import MarvelRecs from "./Components/MarvelRecs";
-//import MarvelTimeLine from "./Components/MarvelTimeline";
+//import MarvelGallery from "./components/MarvelGallery";
+//import MarvelList from "./components/MarvelList";
+//import MarvelRecs from "./components/MarvelRecs";
+//import MarvelTimeLine from "./components/MarvelTimeline";
 
 // MAYBE USE LATER...
 //const HOME_URL = "https://api.themoviedb.org/3/";
 //const API_KEY = "ccf583c0e68ae4c777227c8277f2a8b7";
 
-function App() {
+export default function App() {
   //ARRAY OF MOVIES FEATURING CHARACTER SEARCHED
   const [movies, setMovies] = useState([]);
   //FORM INPUT
   const [characterSearch, setCharacterSearch] = useState("");
 
-// ADD FUNCTIONS
+  // ADD FUNCTIONS
 
-const useEffect(() => {
-  getHeroes();
-}, []};
+  useEffect(() => {
+    getHeroes();
+  }, []);
 
-const getHeroes = () => {
-  fetch(``)
-
-}
-
+  const getHeroes = () => {
+    fetch(``);
+  };
 
   /*async function fetchMovieData() {
     UGH... WORk ON THIS FUNCTION
@@ -45,36 +43,24 @@ const getHeroes = () => {
   // API
   // GET SEARCH MOVIES https://api.themoviedb.org/3/search/movie?api_key=API KEY HERE&language=en-US&query=KEYWORDHERE
 
-  //const useEffect(){
-  //  fetchMovieData("");
-  // };
-
   //const handleChange(){};
 
   //const handleSubmit(){};
 
   return (
-    <div className="App">
-      <h1>MY Marvel MVP</h1>
+    <div>
+      <h1>My Marvel MVP</h1>
 
       <div>
         <h2>Featured In...</h2>
       </div>
 
       <div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="character"
-            placeholder="Marvel Character"
-            value={character}
-            onChange={handleChange}
-          />
-          <button type="submit">Search Marvel Character</button>
+        <form>
+          <input type="text" name="character" placeholder="Marvel Character" />
+          <button>Search Marvel Character</button>
         </form>
       </div>
     </div>
   );
 }
-
-export default App;

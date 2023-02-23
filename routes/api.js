@@ -1,18 +1,25 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 const db = require(".../model/helper");
 
-// REMEMBER!! ALL ROUTES START WITH /movielist 
+// REMEMBER!! ALL ROUTES START WITH /movielist
 // DB STRUCTURE mysql/marvel/movielist/id, name, movieOne, movieTwo, movieThree
 
+router.listen(3000, () => {
+  console.log("Server listening to http://localhost:3000");
+});
+
+router.get("/", (req, res) => {
+  res.send("Hello");
+});
 // HELPER FUNCTION
 
 function getHeroes(req, res) {
   db("SELECT * FROM movielist")
-  .then(results => {
-    res.send(results.data);
-  })
-  .catch(err => res.status(500).send(err));
+    .then((results) => {
+      res.send(results.data);
+    })
+    .catch((err) => res.status(500).send(err));
 }
 
 // GET ALL SUPERHEROES
@@ -21,41 +28,34 @@ router.get("/", function (req, res) {
 });
 
 // GET ONE SUPERHERO
-router.get("/:name", function(req, res) {
+router.get("/:name", function (req, res) {
   db(`SELECT * FROM movielist WHERE name = ${req.params.name};`)
-  .then(results => {
-    res.send(results.data);
-  })
-  .catch(err => res.status(500).send(err));
+    .then((results) => {
+      res.send(results.data);
+    })
+    .catch((err) => res.status(500).send(err));
 });
 
 // ADD A SUPERHERO - NOT SURE I NEED THIS ROUTE??
-router.post("/", function(req, res) {
+router.post("/", function (req, res) {
   let { name } = req.body;
   let sql = `INSERT INTO movielist (name) VALUES ('${name}');`;
   db(sql)
-  .then(results => {
-    getHeroes(req, res);
-  })
-  .catch(err => res.status(500).send(err));
+    .then((results) => {
+      getHeroes(req, res);
+    })
+    .catch((err) => res.status(500).send(err));
 });
 
 // DELETE A SUPERHERO - NOT SURE I NEED THIS ROUTE EITHER??
-router.delete("/:id", function(req, res) {
+router.delete("/:id", function (req, res) {
   let sql = `DELETE FROM movielist WHERE id = ${req.params.id};`;
   db(sql)
-  .then(results => {
-    getHeroes(req, res);
-  })
-  .catch(err => res.status(500).send(err));
+    .then((results) => {
+      getHeroes(req, res);
+    })
+    .catch((err) => res.status(500).send(err));
 });
-
-
-
-
-
-
-  
 
 // EXTERNAL API
 /*
