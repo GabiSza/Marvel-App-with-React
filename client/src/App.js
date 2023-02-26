@@ -54,7 +54,7 @@ export default function App() {
     } catch (err) {
       console.log("Error");
     }
-  */
+  
   //}
 
   // API
@@ -62,7 +62,9 @@ export default function App() {
 
   //const handleChange(){};
 
-  //const handleSubmit(){};
+  //const handleSubmit(){}; 
+
+
 
   return (
     <div className="App">
@@ -203,4 +205,4 @@ export default function App() {
       </div>
     </div>
   );
-}
+} 
