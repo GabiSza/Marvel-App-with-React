@@ -13,19 +13,36 @@ import "./App.css";
 
 export default function App() {
   //ARRAY OF MOVIES FEATURING CHARACTER SEARCHED
-  const [movies, setMovies] = useState([]);
-  //FORM INPUT
-  const [characterSearch, setCharacterSearch] = useState("");
+  //const [movies, setMovies] = useState([]);
+
+  const options = [
+    { label: "Spider-Man", value: "Spider-Man" },
+    { label: "Doctor Strange", value: "Doctor_Strange" },
+    { label: "Thor", value: "Thor" },
+    { label: "Loki", value: "Loki" },
+    { label: "Iron Man", value: "Iron_Man" },
+    { label: "Captain America", value: "Captain_America" },
+    { label: "Hulk", value: "Hulk" },
+    { label: "Black Widow", value: "Black_Widow" },
+    { label: "Hawkeye", value: "Hawkeye" },
+  ];
+
+  //DROPDOWN SELECTION
+  const [heroSelect, setHeroSelect] = useState();
+
+  const handleChange = (event) => {
+    setHeroSelect(event.target.value);
+  };
 
   // ADD FUNCTIONS
 
-  useEffect(() => {
-    getHeroes();
-  }, []);
+  //useEffect(() => {
+  //  getHeroes();
+  //}, []);
 
-  const getHeroes = () => {
-    fetch(``);
-  };
+  //const getHeroes = () => {
+  //  fetch(``);
+  //};
 
   /*async function fetchMovieData() {
     UGH... WORk ON THIS FUNCTION
@@ -99,39 +116,35 @@ export default function App() {
         <div>
           <form>
             <h3>Choose Your Favorite Superhero!</h3>
-            <select className="form-select" aria-label="Default select example">
-              <option selected>Open this select menu</option>
-              <option value="Spider-Man">Spider-Man</option>
-              <option value="Doctor Strange">Doctor Strange</option>
-              <option value="Thor">Thor</option>
-              <option value="Loki">Loki</option>
-              <option value="Iron Man">Iron Man</option>
-              <option value="Captain America">Captain America</option>
-              <option value="Hulk">Hulk</option>
-              <option value="Black Widow">Black Widow</option>
-              <option value="Hawkeye">Hawkeye</option>
-              <option value="Nick Fury">Nick Fury</option>
-              <option value="Thor">Thor</option>
-              <option value="Thor">Thor</option>
+            <select
+              className="form-select"
+              aria-label="Default select example"
+              value={value}
+              onChange={handleChange}
+            >
+              {options.map((option) => (
+                <option value={option.value}>{option.label}</option>
+              ))}
             </select>
           </form>
         </div>
         <div className="row">
           <div className="col">
-            <h3>Column 1</h3>
-            All the stuff you want to know about Spider-Man....
+            <h3>SUPERHERO IMAGE</h3>
+            Here is an image of your selected superhero...
+            <p>{value}</p>
           </div>
           <div className="col">
-            <h3>Column 2</h3>
-            All the stuff you want to know about Doctor Strange...
+            <h3>SUPERHERO STATS</h3>
+            Non-superhero name, age, bio stuff...
           </div>
           <div className="col">
-            <h3>Column 3</h3>
-            All the stuff you want to know about Thor...
+            <h3>SUPERHERO MOVIES </h3>
+            Multiverse Of Madness, etc.
           </div>
         </div>
         <div>
-          <h3>We may need cards...</h3>
+          <h3>ADD HEADER HERE</h3>
           <div className="row">
             <div className="col">
               <div className="card">
@@ -141,13 +154,12 @@ export default function App() {
                   alt="..."
                 />
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
+                  <h5 className="card-title">MCU Timeline</h5>
                   <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    MCU chronological time. Super important.
                   </p>
                   <a href="#" className="btn btn-primary">
-                    Go somewhere
+                    Timeline!
                   </a>
                 </div>
               </div>
@@ -160,13 +172,12 @@ export default function App() {
                   alt="..."
                 />
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
+                  <h5 className="card-title">Superhero Gallery</h5>
                   <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Gallery of super exciting superheroes in action.
                   </p>
                   <a href="#" className="btn btn-primary">
-                    Go somewhere
+                    Gallery!
                   </a>
                 </div>
               </div>
@@ -179,13 +190,10 @@ export default function App() {
                   alt="..."
                 />
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                  <h5 className="card-title">Your Favorites</h5>
+                  <p className="card-text">Save your favorite superheroes.</p>
                   <a href="#" className="btn btn-primary">
-                    Go somewhere
+                    My Superheroes!
                   </a>
                 </div>
               </div>
