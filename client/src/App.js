@@ -1,21 +1,47 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
-
-// IMPORT COMPONENTS HERE - FORM, LIST, TIMELINE, GALLERY, RECOMMENDATIONS, ETC.
-//import MarvelGallery from "./components/MarvelGallery";
-//import MarvelList from "./components/MarvelList";
-//import MarvelRecs from "./components/MarvelRecs";
+import MarvelGallery from "./components/MarvelGallery";
+import MarvelList from "./components/MarvelList";
 //import MarvelTimeLine from "./components/MarvelTimeline";
+//import MarvelRecs from "./components/MarvelRecs";
+import "./App.css";
 
 // MAYBE USE LATER...
 //const HOME_URL = "https://api.themoviedb.org/3/";
 //const API_KEY = "ccf583c0e68ae4c777227c8277f2a8b7";
 
-export default function App() {
-  //ARRAY OF MOVIES FEATURING CHARACTER SEARCHED
-  //const [movies, setMovies] = useState([]);
+function App() {
+  const [heroes, setHeroes] = useState([
+    {
+      id: 1,
+      title: "Spider-Man",
+      url: "https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description:
+        "Laboris laboris Lorem adipisicing cupidatat aute do quis anim. Ut irure occaecat ad nulla labore deserunt. Eiusmod minim ut cupidatat ea exercitation irure cupidatat. Quis mollit Lorem eu tempor aliquip anim sint. Reprehenderit elit commodo laborum consequat adipisicing eu.",
+    },
+    {
+      id: 2,
+      title: "Doctor-Strange",
+      url: "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description:
+        "Ea cupidatat ex ex elit duis non proident tempor adipisicing. Aliqua velit ullamco duis nulla quis. Sint labore irure tempor sint veniam quis sit esse irure minim enim et velit pariatur. Eiusmod eiusmod esse voluptate labore nisi officia nisi.",
+    },
+    {
+      id: 3,
+      title: "Thor",
+      url: "https://images.pexels.com/photos/96938/pexels-photo-96938.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description:
+        "Eu occaecat ea Lorem adipisicing laborum. Eiusmod laboris magna laboris exercitation consequat adipisicing incididunt. Ut qui cupidatat occaecat et amet sit in ea. Reprehenderit velit id enim ad incididunt anim Lorem aute veniam pariatur ullamco proident dolore.",
+    },
+    {
+      id: 4,
+      title: "Moon Knight",
+      url: "https://images.pexels.com/photos/1440387/pexels-photo-1440387.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description:
+        "Et reprehenderit nisi dolore cupidatat. Nulla anim et fugiat pariatur sit do ut duis ex ullamco deserunt dolor culpa duis. Deserunt duis consectetur sint enim fugiat qui minim pariatur elit proident sunt non esse dolor.",
+    },
+  ]);
 
-  const options = [
+  /*  const options = [
     { label: "Spider-Man", value: "Spider-Man" },
     { label: "Doctor Strange", value: "Doctor_Strange" },
     { label: "Thor", value: "Thor" },
@@ -26,13 +52,15 @@ export default function App() {
     { label: "Black Widow", value: "Black_Widow" },
     { label: "Hawkeye", value: "Hawkeye" },
   ];
+  */
 
   //DROPDOWN SELECTION
-  const [heroSelect, setHeroSelect] = useState();
+  //const [heroSelect, setHeroSelect] = useState();
 
-  const handleChange = (event) => {
+  /*const handleChange = (event) => {
     setHeroSelect(event.target.value);
   };
+  */
 
   // ADD FUNCTIONS
 
@@ -44,17 +72,17 @@ export default function App() {
   //  fetch(``);
   //};
 
-  /*async function fetchMovieData() {
-    UGH... WORk ON THIS FUNCTION
-    try {
-      const API_KEY = "ccf583c0e68ae4c777227c8277f2a8b7";
-      const response = await fetch(`https://api.themoviedb.org/3/search/movie?${API_KEY}&media_type=movie`);
-      const data = await response.json();
-      setMovies(resp.data.results);
-    } catch (err) {
-      console.log("Error");
-    }
-  
+  //async function fetchMovieData() {
+  //UGH... WORk ON THIS FUNCTION
+  //try {
+  //const API_KEY = "ccf583c0e68ae4c777227c8277f2a8b7";
+  //const response = await fetch(`https://api.themoviedb.org/3/search/movie?${API_KEY}&media_type=movie`);
+  //const data = await response.json();
+  //setMovies(resp.data.results);
+  //} catch (err) {
+  //console.log("Error");
+  //}
+
   //}
 
   // API
@@ -62,9 +90,7 @@ export default function App() {
 
   //const handleChange(){};
 
-  //const handleSubmit(){}; 
-
-
+  //const handleSubmit(){};
 
   return (
     <div className="App">
@@ -116,25 +142,13 @@ export default function App() {
         </div>
 
         <div>
-          <form>
-            <h3>Choose Your Favorite Superhero!</h3>
-            <select
-              className="form-select"
-              aria-label="Default select example"
-              value={value}
-              onChange={handleChange}
-            >
-              {options.map((option) => (
-                <option value={option.value}>{option.label}</option>
-              ))}
-            </select>
-          </form>
+          <MarvelGallery />
         </div>
+
         <div className="row">
           <div className="col">
             <h3>SUPERHERO IMAGE</h3>
             Here is an image of your selected superhero...
-            <p>{value}</p>
           </div>
           <div className="col">
             <h3>SUPERHERO STATS</h3>
@@ -203,6 +217,20 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      <div>
+        <form>
+          <h3>Choose Your Favorite Superhero!</h3>
+          <select
+            className="form-select"
+            aria-label="Default select example"
+            //value={value}
+            //onChange={handleChange}
+          ></select>
+        </form>
+      </div>
     </div>
   );
-} 
+}
+
+export default App;
