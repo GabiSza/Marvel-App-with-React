@@ -11,34 +11,37 @@ function App() {
     {
       id: 1,
       title: "Spider-Man",
-      url: "https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=600",
+      url: "https://assets-prd.ignimgs.com/2022/06/23/no-way-home-1655920834906-1655994176936.jpg?fit=bounds&width=1280&height=720&dpr=2",
       description:
-        "Laboris laboris Lorem adipisicing cupidatat aute do quis anim. Ut irure occaecat ad nulla labore deserunt. Eiusmod minim ut cupidatat ea exercitation irure cupidatat. Quis mollit Lorem eu tempor aliquip anim sint. Reprehenderit elit commodo laborum consequat adipisicing eu.",
-      MCUlist: "ADD Spider Man Movies",
+        "Spider-Man, aka Peter Benjamin Parker, was bitten by a radioactive spider when he was 14.  He developed spider-like superpowers including super strength and super speed - and the ability to stick to walls - that enabled him to fight crime in New York City and beyond.",
+      movieList:
+        "Spider-Man: No Way Home, Spider-Man: Far From Home, Spider-Man: Into the Spider-Verse, Spider-Man: Homecoming",
     },
     {
       id: 2,
       title: "Doctor Strange",
-      url: "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=600",
+      url: "https://cdn.vox-cdn.com/thumbor/Tw_9o2V9Z88ct0A94PitWiim9j8=/0x0:5181x2914/1400x1050/filters:focal(1371x320:2199x1148):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/51721691/DoctorStrangeZappity.0.jpg",
       description:
-        "Ea cupidatat ex ex elit duis non proident tempor adipisicing. Aliqua velit ullamco duis nulla quis. Sint labore irure tempor sint veniam quis sit esse irure minim enim et velit pariatur. Eiusmod eiusmod esse voluptate labore nisi officia nisi.",
-      MCUlist: "ADD Doctor Strange Movies",
+        "Doctor Strange, aka Stephen Vincent Strange, was a brilliant neurosurgeon whose hands were crushed beyond repair in a car accident that occured because he was looking at a patient x-ray while driving to dinner one night. Although he underwent an extensive surgery and grueling physical therapy, his hands remained unusable.  He traveled to Nepal in search of Kamar-Taj and the Ancient One and became trained in the Mystic Arts under Karl Mordo. He became the protector of the Sanctum Sanctorum and protects the Earth from inter-dimensional threats.",
+      movieList:
+        "Doctor Strange in the Multiverse of Madness, Spider-Man: No Way Home, Avengers: Endgame, Avengers: Infinity War, Thor: Ragnarok, Doctor Strange",
     },
     {
       id: 3,
       title: "Thor",
-      url: "https://images.pexels.com/photos/96938/pexels-photo-96938.jpeg?auto=compress&cs=tinysrgb&w=600",
+      url: "https://www.pinkvilla.com/imageresize/brett_goldstein_hercules_thor_4.jpg?width=752&t=pvorg",
       description:
-        "Eu occaecat ea Lorem adipisicing laborum. Eiusmod laboris magna laboris exercitation consequat adipisicing incididunt. Ut qui cupidatat occaecat et amet sit in ea. Reprehenderit velit id enim ad incididunt anim Lorem aute veniam pariatur ullamco proident dolore.",
-      MCUlist: "ADD Thor Movies",
+        "Thor, aka Thor Odinson, is the Asgardian God of Thunder and a founding member of the Avengers. Thor weilds a mighty hammer called Mjolnir.",
+      movieList:
+        "Thor: Love and Thunder, Avengers: Endgame, Avengers: Infinity War, Thor: Ragnarok, Doctor Strange, Avengers: Age of Ultron, Thor: The Dark World, The Avengers, Thor",
     },
     {
       id: 4,
-      title: "Moon Knight",
-      url: "https://images.pexels.com/photos/1440387/pexels-photo-1440387.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Shang-Chi",
+      url: "https://i.pinimg.com/564x/1a/55/a1/1a55a11bbc6a060845edd58ced0f396a.jpg",
       description:
-        "Et reprehenderit nisi dolore cupidatat. Nulla anim et fugiat pariatur sit do ut duis ex ullamco deserunt dolor culpa duis. Deserunt duis consectetur sint enim fugiat qui minim pariatur elit proident sunt non esse dolor.",
-      MCUlist: "ADD Moon Knight Movies",
+        "Shang-Chi, aka Xu Shang-Chi, was raised at the Ten Rings Headquarters in the mountains of China where he underwent intense martial arts training. After avenging his mother's death, he fled to the United States to start a new life. Altough he changed his name to Shaun and tried to live a normal life, he was eventually drawn back into the world of mysterious world of the Ten Rings.",
+      movieList: "Shang-Chi and the Legend of the Ten Rings",
     },
   ]);
   const [featuredHero, setFeaturedHero] = useState({});
@@ -124,7 +127,7 @@ function App() {
         <h1 className="text-center">My Marvel MVP</h1>
 
         <div>
-          <h2>My Marvel Superheroes</h2>
+          <h3>My Marvel Superheroes</h3>
           <div id="container-grid">
             <div id="grid">
               {heroes.map((hero) => (
@@ -136,20 +139,17 @@ function App() {
             </div>
             <div id="featured">
               <div>
-                <h3>Featured Superhero</h3>
-                <p>{featuredHero.title}</p>
+                <h2>Featured Superhero</h2>
+                <h4>{featuredHero.title}</h4>
                 <img src={featuredHero.url} />
                 <div className="row">
                   <div className="col">
-                    <h3>{featuredHero.title} Essential Stats </h3>
-                    Non-superhero name, age, bio stuff...
+                    <h3>Who Is {featuredHero.title}?</h3>
                     <p>{featuredHero.description}</p>
                   </div>
                   <div className="col">
-                    <h3>{featuredHero.title} Movies </h3>
-                    See {featuredHero.title} in these Marvel Cinematic Universe
-                    movies...
-                    <p>{featuredHero.MCUlist}</p>
+                    <h3>See {featuredHero.title} In These Movies </h3>
+                    <p>{featuredHero.movieList}</p>
                   </div>
                 </div>
               </div>
