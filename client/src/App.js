@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 //import MarvelGallery from "./components/MarvelGallery";
 //import MarvelList from "./components/MarvelList";
-//import MarvelTimeLine from "./components/MarvelTimeline";
+import MarvelTimeLine from "./components/MarvelTimeline";
 //import MarvelRecs from "./components/MarvelRecs";
 import "./App.css";
 import "./";
 
 function App() {
+  const [gallery, setGallery] = useState(true);
+
   const [heroes, setHeroes] = useState([
     {
       id: 1,
@@ -78,27 +80,6 @@ function App() {
   ]);
   const [featuredHero, setFeaturedHero] = useState({});
 
-  /*  const options = [
-    { label: "Spider-Man", value: "Spider-Man" },
-    { label: "Doctor Strange", value: "Doctor_Strange" },
-    { label: "Thor", value: "Thor" },
-    { label: "Loki", value: "Loki" },
-    { label: "Iron Man", value: "Iron_Man" },
-    { label: "Captain America", value: "Captain_America" },
-    { label: "Hulk", value: "Hulk" },
-    { label: "Black Widow", value: "Black_Widow" },
-    { label: "Hawkeye", value: "Hawkeye" },
-  ];
-  */
-
-  //DROPDOWN SELECTION
-  //const [heroSelect, setHeroSelect] = useState();
-
-  /*const handleChange = (event) => {
-    setHeroSelect(event.target.value);
-  };
-  */
-
   // ADD FUNCTIONS
 
   //useEffect(() => {
@@ -109,7 +90,14 @@ function App() {
   //  fetch(``);
   //};
 
-  //const handleChange(){};
+  const handleChangeView = (gallery) => {
+    setGallery(gallery);
+    if (gallery) {
+      return <App />;
+    } else {
+      return <MarvelTimeline />;
+    }
+  };
 
   //const handleSubmit(){};
 
@@ -128,6 +116,7 @@ function App() {
             aria-controls="navbarNavAltMarkup"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={() => handleChangeView(true)}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -136,7 +125,7 @@ function App() {
               <a className="nav-link active" aria-current="page" href="#">
                 Home
               </a>
-              <a className="nav-link" href="#">
+              <a className="nav-link disabled" href="#">
                 Gallery
               </a>
               <a className="nav-link" href="#">
@@ -158,7 +147,7 @@ function App() {
       <div className="container">
         <h1 className="text-center">Marvel Minipedia</h1>
 
-        <div>
+        <div id="gallery-view">
           <h3>My Marvel Superheroes</h3>
           <div id="container-grid">
             <div id="grid">
@@ -190,7 +179,8 @@ function App() {
         </div>
 
         <div>
-          <h3>ADD HEADER HERE</h3>
+          <h3>Keep exploring the Marvel universe...</h3>
+
           <div className="row">
             <div className="col">
               <div className="card">
@@ -204,7 +194,11 @@ function App() {
                   <p className="card-text">
                     MCU chronological time. Super important.
                   </p>
-                  <a href="#" className="btn btn-primary">
+                  <a
+                    href="#"
+                    className="btn btn-primary"
+                    onClick={() => handleChangeView(false)}
+                  >
                     Timeline!
                   </a>
                 </div>
@@ -246,18 +240,6 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div>
-        <form>
-          <h3>Choose Your Favorite Superhero!</h3>
-          <select
-            className="form-select"
-            aria-label="Default select example"
-            //value={value}
-            //onChange={handleChange}
-          ></select>
-        </form>
       </div>
     </div>
   );
