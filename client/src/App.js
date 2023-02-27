@@ -40,8 +40,40 @@ function App() {
       title: "Shang-Chi",
       url: "https://i.pinimg.com/564x/1a/55/a1/1a55a11bbc6a060845edd58ced0f396a.jpg",
       description:
-        "Shang-Chi, aka Xu Shang-Chi, was raised at the Ten Rings Headquarters in the mountains of China where he underwent intense martial arts training. After avenging his mother's death, he fled to the United States to start a new life. Altough he changed his name to Shaun and tried to live a normal life, he was eventually drawn back into the world of mysterious world of the Ten Rings.",
+        "Shang-Chi, aka Xu Shang-Chi, was raised at the Ten Rings Headquarters in the mountains of China where he underwent intense martial arts training. After avenging his mother's death, he fled to the United States to start a new life. Altough he changed his name to Shaun and tried to live a normal life, he was eventually drawn back into the mysterious world of the Ten Rings.",
       movieList: "Shang-Chi and the Legend of the Ten Rings",
+    },
+    {
+      id: 5,
+      title: "Another Superhero",
+      url: "https://images.pexels.com/photos/6203497/pexels-photo-6203497.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Superhero stuff...",
+      movieList:
+        "Another Superhero the Sequel, Another Superhero the Middle Movie, Another Superhero the Original Movie",
+    },
+    {
+      id: 6,
+      title: "Another Superhero",
+      url: "https://images.pexels.com/photos/6203497/pexels-photo-6203497.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Superhero stuff...",
+      movieList:
+        "Another Superhero the Sequel, Another Superhero the Middle Movie, Another Superhero the Original Movie",
+    },
+    {
+      id: 7,
+      title: "Another Superhero",
+      url: "https://images.pexels.com/photos/6203497/pexels-photo-6203497.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Superhero stuff...",
+      movieList:
+        "Another Superhero the Sequel, Another Superhero the Middle Movie, Another Superhero the Original Movie",
+    },
+    {
+      id: 8,
+      title: "Another Superhero",
+      url: "https://images.pexels.com/photos/6203497/pexels-photo-6203497.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description: "Superhero stuff...",
+      movieList:
+        "Another Superhero the Sequel, Another Superhero the Middle Movie, Another Superhero the Original Movie",
     },
   ]);
   const [featuredHero, setFeaturedHero] = useState({});
@@ -86,7 +118,7 @@ function App() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            My Marvel MVP
+            Marvel Minipedia
           </a>
           <button
             className="navbar-toggler"
@@ -116,7 +148,7 @@ function App() {
                 tabindex="-1"
                 aria-disabled="true"
               >
-                Coming Soon!! Recommendations
+                Recommendations
               </a>
             </div>
           </div>
@@ -124,7 +156,7 @@ function App() {
       </nav>
 
       <div className="container">
-        <h1 className="text-center">My Marvel MVP</h1>
+        <h1 className="text-center">Marvel Minipedia</h1>
 
         <div>
           <h3>My Marvel Superheroes</h3>
