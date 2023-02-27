@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-//import MarvelGallery from "./components/MarvelGallery";
+//import MarvelNav from "./components/MarvelNav";
+import MarvelGallery from "./components/MarvelGallery";
 //import MarvelList from "./components/MarvelList";
-import MarvelTimeLine from "./components/MarvelTimeline";
+import MarvelTimeline from "./components/MarvelTimeline";
 //import MarvelRecs from "./components/MarvelRecs";
 import "./App.css";
 import "./";
+import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
-  const [gallery, setGallery] = useState(true);
+  //const [gallery, setGallery] = useState(true);
 
   const [heroes, setHeroes] = useState([
     {
@@ -78,6 +80,7 @@ function App() {
         "Another Superhero the Sequel, Another Superhero the Middle Movie, Another Superhero the Original Movie",
     },
   ]);
+
   const [featuredHero, setFeaturedHero] = useState({});
 
   // ADD FUNCTIONS
@@ -90,7 +93,7 @@ function App() {
   //  fetch(``);
   //};
 
-  const handleChangeView = (gallery) => {
+  /*const handleChangeView = (gallery) => {
     setGallery(gallery);
     if (gallery) {
       return <App />;
@@ -98,6 +101,7 @@ function App() {
       return <MarvelTimeline />;
     }
   };
+  */
 
   //const handleSubmit(){};
 
@@ -116,20 +120,25 @@ function App() {
             aria-controls="navbarNavAltMarkup"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            onClick={() => handleChangeView(true)}
+            //onClick={() => handleChangeView(true)}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
-              <a className="nav-link disabled" href="#">
                 Gallery
               </a>
               <a className="nav-link" href="#">
-                Timeline
+                <Link to="/MarvelTimeline">Timeline</Link>
+              </a>
+              <a
+                className="nav-link disabled"
+                href="#"
+                tabindex="-1"
+                aria-disabled="true"
+              >
+                Favorites
               </a>
               <a
                 className="nav-link disabled"
@@ -143,6 +152,13 @@ function App() {
           </div>
         </div>
       </nav>
+
+      <>
+        <Routes>
+          <Route path="/" element={<MarvelGallery />} />
+          <Route path="/" element={<MarvelTimeline />} />
+        </Routes>
+      </>
 
       <div className="container">
         <h1 className="text-center">Marvel Minipedia</h1>
@@ -158,21 +174,22 @@ function App() {
                 </div>
               ))}
             </div>
-            <div id="featured">
-              <div>
-                <h2>Featured Superhero</h2>
-                <h4>{featuredHero.title}</h4>
-                <img src={featuredHero.url} />
-                <div className="row">
-                  <div className="col">
-                    <h3>Who Is {featuredHero.title}?</h3>
-                    <p>{featuredHero.description}</p>
-                  </div>
-                  <div className="col">
-                    <h3>See {featuredHero.title} In These Movies </h3>
-                    <p>{featuredHero.movieList}</p>
-                  </div>
-                </div>
+          </div>
+        </div>
+
+        <div id="featured">
+          <div>
+            <h2>Featured Superhero</h2>
+            <h4>{featuredHero.title}</h4>
+            <img src={featuredHero.url} />
+            <div className="row">
+              <div className="col">
+                <h3>Who Is {featuredHero.title}?</h3>
+                <p>{featuredHero.description}</p>
+              </div>
+              <div className="col">
+                <h3>See {featuredHero.title} In These Movies </h3>
+                <p>{featuredHero.movieList}</p>
               </div>
             </div>
           </div>
@@ -194,34 +211,13 @@ function App() {
                   <p className="card-text">
                     MCU chronological time. Super important.
                   </p>
-                  <a
-                    href="#"
-                    className="btn btn-primary"
-                    onClick={() => handleChangeView(false)}
-                  >
-                    Timeline!
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card">
-                <img
-                  src="https://images.pexels.com/photos/6203497/pexels-photo-6203497.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  className="card-img-top"
-                  alt="..."
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Superhero Gallery</h5>
-                  <p className="card-text">
-                    Gallery of super exciting superheroes in action.
-                  </p>
                   <a href="#" className="btn btn-primary">
-                    Gallery!
+                    <Link to="/MarvelTimeline">Timeline!</Link>
                   </a>
                 </div>
               </div>
             </div>
+
             <div className="col">
               <div className="card">
                 <img
@@ -234,6 +230,22 @@ function App() {
                   <p className="card-text">Save your favorite superheroes.</p>
                   <a href="#" className="btn btn-primary">
                     My Superheroes!
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card">
+                <img
+                  src="https://images.pexels.com/photos/6203497/pexels-photo-6203497.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Watch More</h5>
+                  <p className="card-text">Recommended movies.</p>
+                  <a href="#" className="btn btn-primary">
+                    Gallery!
                   </a>
                 </div>
               </div>

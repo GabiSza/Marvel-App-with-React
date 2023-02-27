@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./components/MarvelTimeline.css";
+import "../components/MarvelTimeline.css";
 
 export default function MarvelTimeline() {
   // ARRAY OF MOVIES - MAP THROUGH BELOW

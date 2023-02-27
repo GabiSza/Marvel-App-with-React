@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../MarvelRecs.css";
 
 // FOR API USE LATER...
 //const HOME_URL = "https://api.themoviedb.org/3/";
