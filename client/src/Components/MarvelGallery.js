@@ -21,6 +21,20 @@ function MarvelGallery({ allHeroes }) {
             <h3>Featured Superhero</h3>
             <p>{featuredHero.title}</p>
             <img src={featuredHero.url} />
+            <div className="row">
+              <div className="col">
+                <h3>SUPERHERO IMAGE</h3>
+                Here is an image of your selected superhero...
+              </div>
+              <div className="col">
+                <h3>SUPERHERO STATS</h3>
+                Non-superhero name, age, bio stuff...
+              </div>
+              <div className="col">
+                <h3>SUPERHERO MOVIES </h3>
+                Multiverse Of Madness, etc.
+              </div>
+            </div>
           </div>
         </div>
       </div>

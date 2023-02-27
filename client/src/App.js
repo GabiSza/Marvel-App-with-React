@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import MarvelGallery from "./components/MarvelGallery";
-import MarvelList from "./components/MarvelList";
+//import MarvelList from "./components/MarvelList";
 //import MarvelTimeLine from "./components/MarvelTimeline";
 //import MarvelRecs from "./components/MarvelRecs";
 import "./App.css";
-
-// MAYBE USE LATER...
-//const HOME_URL = "https://api.themoviedb.org/3/";
-//const API_KEY = "ccf583c0e68ae4c777227c8277f2a8b7";
 
 function App() {
   const [heroes, setHeroes] = useState([
@@ -72,22 +68,6 @@ function App() {
   //  fetch(``);
   //};
 
-  //async function fetchMovieData() {
-  //UGH... WORk ON THIS FUNCTION
-  //try {
-  //const API_KEY = "ccf583c0e68ae4c777227c8277f2a8b7";
-  //const response = await fetch(`https://api.themoviedb.org/3/search/movie?${API_KEY}&media_type=movie`);
-  //const data = await response.json();
-  //setMovies(resp.data.results);
-  //} catch (err) {
-  //console.log("Error");
-  //}
-
-  //}
-
-  // API
-  // GET SEARCH MOVIES https://api.themoviedb.org/3/search/movie?api_key=API KEY HERE&language=en-US&query=KEYWORDHERE
-
   //const handleChange(){};
 
   //const handleSubmit(){};
@@ -145,20 +125,6 @@ function App() {
           <MarvelGallery />
         </div>
 
-        <div className="row">
-          <div className="col">
-            <h3>SUPERHERO IMAGE</h3>
-            Here is an image of your selected superhero...
-          </div>
-          <div className="col">
-            <h3>SUPERHERO STATS</h3>
-            Non-superhero name, age, bio stuff...
-          </div>
-          <div className="col">
-            <h3>SUPERHERO MOVIES </h3>
-            Multiverse Of Madness, etc.
-          </div>
-        </div>
         <div>
           <h3>ADD HEADER HERE</h3>
           <div className="row">
