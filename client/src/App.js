@@ -127,10 +127,10 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               <a className="nav-link active" aria-current="page" href="#">
-                Gallery
+                <Link to="/gallery">Gallery</Link>
               </a>
               <a className="nav-link" href="#">
-                <Link to="/MarvelTimeline">Timeline</Link>
+                <Link to="/timeline">Timeline</Link>
               </a>
               <a
                 className="nav-link disabled"
@@ -156,7 +156,7 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<MarvelGallery />} />
-          <Route path="/" element={<MarvelTimeline />} />
+          <Route path="/timeline" element={<MarvelTimeline />} />
         </Routes>
       </>
 
@@ -169,8 +169,8 @@ function App() {
             <div id="grid">
               {heroes.map((hero) => (
                 <div key={hero.id}>
-                  <img src={hero.url} onClick={() => setFeaturedHero(hero)} />
                   <h5>{hero.title}</h5>
+                  <img src={hero.url} onClick={() => setFeaturedHero(hero)} />
                 </div>
               ))}
             </div>
@@ -212,7 +212,7 @@ function App() {
                     MCU chronological time. Super important.
                   </p>
                   <a href="#" className="btn btn-primary">
-                    <Link to="/MarvelTimeline">Timeline!</Link>
+                    <Link to="/timeline">Timeline!</Link>
                   </a>
                 </div>
               </div>
