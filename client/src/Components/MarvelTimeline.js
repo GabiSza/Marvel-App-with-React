@@ -19,7 +19,7 @@ export default function MarvelTimeline() {
 
   return (
     <div className="timeline-container">
-      <h2>Marvel Minipedia MCU Timeline</h2>
+      <h2>Marvel Cinematic Universe Timeline</h2>
 
       <div className="timeline">
         <div className="container left">

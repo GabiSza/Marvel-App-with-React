@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
+  padding: 30px;
 }
 
 #grid {
@@ -9,6 +10,10 @@
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 180px;
   gap: 50px;
+}
+
+#gallery-view {
+  margin: 10%;
 }
 
 img {

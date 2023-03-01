@@ -33,7 +33,7 @@ function App() {
                 <Link to="/timeline">MCU Timeline</Link>
               </a>
               <a className="nav-link" href="#">
-                <Link to="/list">MCU Timeline</Link>
+                <Link to="/list">Favorite Superheroes</Link>
               </a>
               <a
                 className="nav-link disabled"

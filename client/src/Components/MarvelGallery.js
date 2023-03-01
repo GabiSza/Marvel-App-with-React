@@ -74,38 +74,36 @@ function MarvelGallery() {
     },
   ]);
 
-  const [featuredHero, setFeaturedHero] = useState({});
+  const [featuredHero, setFeaturedHero] = useState({
+    url: "https://i.pinimg.com/564x/d8/a1/ea/d8a1ea774a17c771d1002da2eb7bd3df.jpg",
+  });
 
   return (
-    <div>
+    <div className="container-for-gallery">
       <div className="container-gallery">
-        <div id="gallery-view">
-          <h3>My Marvel Superheroes</h3>
-          <div id="container-grid">
-            <div id="grid">
-              {heroes.map((hero) => (
-                <div key={hero.id}>
-                  <h5>{hero.title}</h5>
-                  <img src={hero.url} onClick={() => setFeaturedHero(hero)} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div id="featured">
-          <div>
-            <h2>Featured Superhero</h2>
-            <h4>{featuredHero.title}</h4>
-            <img src={featuredHero.url} />
-            <div className="row">
-              <div className="col">
-                <h3>Who Is {featuredHero.title}?</h3>
-                <p>{featuredHero.description}</p>
+        <div id="container-grid">
+          <div id="grid">
+            {heroes.map((hero) => (
+              <div key={hero.id}>
+                <h5>{hero.title}</h5>
+                <img src={hero.url} onClick={() => setFeaturedHero(hero)} />
               </div>
-              <div className="col">
-                <h3>See {featuredHero.title} In These Movies </h3>
-                <p>{featuredHero.movieList}</p>
+            ))}
+          </div>
+          <div id="featured">
+            <div>
+              <h2>Featured Superhero</h2>
+              <h4>{featuredHero.title}</h4>
+              <img src={featuredHero.url} />
+              <div className="row">
+                <div className="col">
+                  <h3>Who Is {featuredHero.title}?</h3>
+                  <p>{featuredHero.description}</p>
+                </div>
+                <div className="col">
+                  <h3>See {featuredHero.title} In These Movies </h3>
+                  <p>{featuredHero.movieList}</p>
+                </div>
               </div>
             </div>
           </div>
