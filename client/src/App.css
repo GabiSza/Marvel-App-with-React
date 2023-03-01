@@ -27,6 +27,11 @@ img {
   cursor: pointer;
 }
 
+.img-nav {
+  width: 10%;
+  height: 10%;
+}
+
 .hide {
   display: none;
 }

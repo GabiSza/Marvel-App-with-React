@@ -19,76 +19,77 @@ export default function MarvelTimeline() {
 
   return (
     <div className="timeline-container">
-      <h2>Marvel Cinematic Universe Timeline</h2>
+      <h2>Marvel Minipedia MCU Timeline</h2>
 
       <div className="timeline">
-        <div className="container left">
+        <div className="container-left">
           <div className="content">
-            <h2>2023</h2>
+            <h4>2023</h4>
             <p>Ant-Man and the Wasp: Quantumania</p>
           </div>
         </div>
 
         <div className="container right">
           <div className="content">
-            <h2>2022</h2>
+            <h4>2022</h4>
             <p>Black Panther: Wakanda Forever</p>
           </div>
         </div>
-      </div>
 
-      <div className="container left">
-        <div className="content">
-          <h2>2022</h2>
-          <p>Thor: Love and Thunder</p>
+        <div className="container left">
+          <div className="content">
+            <h4>2022</h4>
+            <p>Thor: Love and Thunder</p>
+          </div>
         </div>
-      </div>
 
-      <div className="container right">
-        <div className="content">
-          <h2>2022</h2>
-          <p>Doctor Strange in the Multiverse of Madness</p>
+        <div className="container right">
+          <div className="content">
+            <h4>2022</h4>
+            <p>Doctor Strange in the Multiverse of Madness</p>
+          </div>
         </div>
-      </div>
 
-      <div className="container left">
-        <div className="content">
-          <h2>2021</h2>
-          <p>Spider-Man: No Way Home</p>
+        <div className="container left">
+          <div className="content">
+            <h4>2021</h4>
+            <p>Spider-Man: No Way Home</p>
+          </div>
         </div>
-      </div>
-      <div className="container right">
-        <div className="content">
-          <h2>2021</h2>
-          <p>Eternals</p>
-        </div>
-      </div>
 
-      <div className="container left">
-        <div className="content">
-          <h2>2021</h2>
-          <p>Shang-Chi and the Legend of the Ten Rings</p>
+        <div className="container right">
+          <div className="content">
+            <h4>2021</h4>
+            <p>Eternals</p>
+          </div>
         </div>
-      </div>
 
-      <div className="container right">
-        <div className="content">
-          <h2>2021</h2>
-          <p>Black Widow</p>
+        <div className="container left">
+          <div className="content">
+            <h4>2021</h4>
+            <p>Shang-Chi and the Legend of the Ten Rings</p>
+          </div>
         </div>
-      </div>
 
-      <div className="container left">
-        <div className="content">
-          <h2>RELEASE YEAR</h2>
-          <p>MOVIE TITLE</p>
+        <div className="container right">
+          <div className="content">
+            <h4>2021</h4>
+            <p>Black Widow</p>
+          </div>
         </div>
-      </div>
 
-      <div className="container right">
-        <div className="content">
-          <h2>RELEASE YEAR</h2>
-          <p>MOVIE TITLE</p>
+        <div className="container left">
+          <div className="content">
+            <h4>RELEASE YEAR</h4>
+            <p>MOVIE TITLE</p>
+          </div>
+        </div>
+
+        <div className="container right">
+          <div className="content">
+            <h4>RELEASE YEAR</h4>
+            <p>MOVIE TITLE</p>
+          </div>
         </div>
       </div>
     </div>
