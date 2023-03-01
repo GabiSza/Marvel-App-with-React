@@ -12,10 +12,10 @@ const db = require("../model/helper");
 });
 */
 
-router.get("/", (req, res) => {
+/*router.get("/", (req, res) => {
   res.send("Hello");
 });
-// HELPER FUNCTION
+*/
 
 function getHeroes(req, res) {
   db("SELECT * FROM favorites")
@@ -31,13 +31,14 @@ router.get("/", function (req, res) {
 });
 
 // GET ONE SUPERHERO
-router.get("/:name", function (req, res) {
+/*router.get("/:name", function (req, res) {
   db(`SELECT * FROM favorites WHERE name = ${req.params.name};`)
     .then((results) => {
       res.send(results.data);
     })
     .catch((err) => res.status(500).send(err));
 });
+*/
 
 // ADD A SUPERHERO
 router.post("/", function (req, res) {

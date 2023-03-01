@@ -5,6 +5,10 @@ import "./MarvelRecs.css";
 //const HOME_URL = "https://api.themoviedb.org/3/";
 //const API_KEY = "ccf583c0e68ae4c777227c8277f2a8b7";
 
+//YOUTUBE API
+// key=API_KEY
+// AIzaSyBeaMZrI4MtcHmvhfRK-beAe3xxh85HsaE
+
 //async function fetchMovieData() {
 //UGH... WORk ON THIS FUNCTION
 //try {
