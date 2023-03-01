@@ -27,6 +27,10 @@ img {
   cursor: pointer;
 }
 
+.marvel-mini-banner {
+  height: 200px;
+}
+
 .img-nav {
   width: 10%;
   height: 10%;

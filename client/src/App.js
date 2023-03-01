@@ -3,7 +3,7 @@ import MarvelGallery from "./components/MarvelGallery";
 import MarvelList from "./components/MarvelList";
 import MarvelTimeline from "./components/MarvelTimeline";
 import MarvelRecs from "./components/MarvelRecs";
-import banner from "client/src/assets/banner.jpg";
+//import banner from "client/src/assets/banner.jpg";
 import "./App.css";
 import "./";
 import { Routes, Route, Link } from "react-router-dom";
@@ -13,9 +13,6 @@ function App() {
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Marvel Minipedia
-          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -56,8 +53,11 @@ function App() {
         </div>
       </nav>
 
-      <div>
-        <img src={require("client/src/assets/banner.jpg")} alt="MM logo" />
+      <div className="marvel-mini-banner">
+        <img
+          src="https://en.ephoto360.com/share_image/2023/03/63ff3925e58d8.jpg"
+          alt="MM logo"
+        />
       </div>
 
       <>

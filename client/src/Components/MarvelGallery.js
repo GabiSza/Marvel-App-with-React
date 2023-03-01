@@ -79,8 +79,6 @@ function MarvelGallery() {
   return (
     <div>
       <div className="container-gallery">
-        <h1 className="text-center">Marvel Minipedia</h1>
-
         <div id="gallery-view">
           <h3>My Marvel Superheroes</h3>
           <div id="container-grid">
