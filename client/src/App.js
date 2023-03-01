@@ -3,6 +3,7 @@ import MarvelGallery from "./components/MarvelGallery";
 import MarvelList from "./components/MarvelList";
 import MarvelTimeline from "./components/MarvelTimeline";
 import MarvelRecs from "./components/MarvelRecs";
+import banner from "client/src/assets/banner.jpg";
 import "./App.css";
 import "./";
 import { Routes, Route, Link } from "react-router-dom";
@@ -54,6 +55,10 @@ function App() {
           </div>
         </div>
       </nav>
+
+      <div>
+        <img src={require("client/src/assets/banner.jpg")} alt="MM logo" />
+      </div>
 
       <>
         <Routes>
