@@ -60,13 +60,6 @@ h4 {
   border-radius: 6px;
 }
 
-/* Full-width containers */
-.container {
-  width: 100%;
-  padding-left: 70px;
-  padding-right: 25px;
-}
-
 /* Make all right containers behave like the left ones */
 .right {
   left: 0%;

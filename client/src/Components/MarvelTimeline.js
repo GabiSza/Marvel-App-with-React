@@ -22,7 +22,7 @@ export default function MarvelTimeline() {
       <h2>Marvel Minipedia MCU Timeline</h2>
 
       <div className="timeline">
-        <div className="container-left">
+        <div className="container left">
           <div className="content">
             <h4>2023</h4>
             <p>Ant-Man and the Wasp: Quantumania</p>

@@ -78,7 +78,7 @@ function MarvelGallery() {
 
   return (
     <div>
-      <div className="container">
+      <div className="container-gallery">
         <h1 className="text-center">Marvel Minipedia</h1>
 
         <div id="gallery-view">
