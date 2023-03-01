@@ -32,13 +32,8 @@ function App() {
               <a className="nav-link" href="#">
                 <Link to="/timeline">MCU Timeline</Link>
               </a>
-              <a
-                className="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-              >
-                My Favorites
+              <a className="nav-link" href="#">
+                <Link to="/list">MCU Timeline</Link>
               </a>
               <a
                 className="nav-link disabled"
