@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 const db = require(".../model/helper");
 
-// REMEMBER!! ALL ROUTES START WITH /movielist
+// REMEMBER!! ROUTES START WITH /favorites
+// DB STRUCTURE mysql/marvel/favorites/id, name
+// REMEMBER!! ROUTES START WITH /movielist
 // DB STRUCTURE mysql/marvel/movielist/id, name, movieOne, movieTwo, movieThree
 
 router.listen(3000, () => {
@@ -15,7 +17,7 @@ router.get("/", (req, res) => {
 // HELPER FUNCTION
 
 function getHeroes(req, res) {
-  db("SELECT * FROM movielist")
+  db("SELECT * FROM favorites")
     .then((results) => {
       res.send(results.data);
     })
@@ -29,17 +31,17 @@ router.get("/", function (req, res) {
 
 // GET ONE SUPERHERO
 router.get("/:name", function (req, res) {
-  db(`SELECT * FROM movielist WHERE name = ${req.params.name};`)
+  db(`SELECT * FROM favorites WHERE name = ${req.params.name};`)
     .then((results) => {
       res.send(results.data);
     })
     .catch((err) => res.status(500).send(err));
 });
 
-// ADD A SUPERHERO - NOT SURE I NEED THIS ROUTE??
+// ADD A SUPERHERO
 router.post("/", function (req, res) {
   let { name } = req.body;
-  let sql = `INSERT INTO movielist (name) VALUES ('${name}');`;
+  let sql = `INSERT INTO favorites (name) VALUES ('${name}');`;
   db(sql)
     .then((results) => {
       getHeroes(req, res);
@@ -47,9 +49,9 @@ router.post("/", function (req, res) {
     .catch((err) => res.status(500).send(err));
 });
 
-// DELETE A SUPERHERO - NOT SURE I NEED THIS ROUTE EITHER??
+// DELETE A SUPERHERO
 router.delete("/:id", function (req, res) {
-  let sql = `DELETE FROM movielist WHERE id = ${req.params.id};`;
+  let sql = `DELETE FROM favorites WHERE id = ${req.params.id};`;
   db(sql)
     .then((results) => {
       getHeroes(req, res);
