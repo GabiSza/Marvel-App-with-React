@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import "../MarvelList.css";
-
+import React from "react";
+import "./MarvelList.css";
 
 export default function MarvelList() {
-
-/*  const options = [
+  /*  const options = [
     { label: "Spider-Man", value: "Spider-Man" },
     { label: "Doctor Strange", value: "Doctor_Strange" },
     { label: "Thor", value: "Thor" },
@@ -17,7 +15,7 @@ export default function MarvelList() {
   ];
   */
 
-//DROPDOWN SELECTION
+  //DROPDOWN SELECTION
   //const [heroSelect, setHeroSelect] = useState();
 
   /*const handleChange = (event) => {
@@ -25,20 +23,17 @@ export default function MarvelList() {
   };
   */
 
-
-return (
+  return (
     <div>
-        <form>
-          <h3>Choose Your Favorite Superhero!</h3>
-          <select
-            className="form-select"
-            aria-label="Default select example"
-            //value={value}
-            //onChange={handleChange}
-          ></select>
-        </form>
-      </div>
+      <form>
+        <h3>Choose Your Favorite Superhero!</h3>
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          //value={value}
+          //onChange={handleChange}
+        ></select>
+      </form>
     </div>
-)
-    
+  );
 }

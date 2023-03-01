@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "../MarvelRecs.css";
+import React from "react";
+import "./MarvelRecs.css";
 
 // FOR API USE LATER...
 //const HOME_URL = "https://api.themoviedb.org/3/";
@@ -21,4 +21,6 @@ import "../MarvelRecs.css";
 // API
 // GET SEARCH MOVIES https://api.themoviedb.org/3/search/movie?api_key=API KEY HERE&language=en-US&query=KEYWORDHERE
 
-export default function MarvelRecs() {}
+export default function MarvelRecs() {
+  return <h1>Recommendations</h1>;
+}
