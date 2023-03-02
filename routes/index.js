@@ -2,20 +2,20 @@ const express = require("express");
 const router = express.Router();
 const db = require("../model/helper");
 
-// REMEMBER!! ROUTES START WITH /favorites
+// REMEMBER!! FOR MarvelList ROUTES START WITH /favorites
 // DB STRUCTURE mysql/marvel/favorites/id, name
-// REMEMBER!! ROUTES START WITH /movielist
+
+// REMEMBER!! FOR  MarvelTimeline ROUTES START WITH /movielist
 // DB STRUCTURE mysql/marvel/movielist/id, releaseYear, title, marvelLink
 
 /*router.listen(3000, () => {
   console.log("Server listening to http://localhost:3000");
 });
-
+*/
 
 router.get("/", (req, res) => {
   res.send("Hello");
 });
-*/
 
 function getMovieList(req, res) {
   db("SELECT * FROM favorites")
@@ -26,7 +26,7 @@ function getMovieList(req, res) {
 }
 
 // GET ALL TIMELINE INFO
-router.get("/movielist", function (req, res) {
+router.get("/movielist", async function (req, res) {
   getMovieList(req, res);
 });
 
