@@ -18,8 +18,7 @@ con.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
 
-  let sql =
-    "DROP TABLE if exists movielist; CREATE TABLE movielist(id INT NOT NULL AUTO_INCREMENT, releaseYear VARCHAR(255), title VARCHAR(255), marvelLink VARCHAR(2000), PRIMARY KEY (id));
+  let sql = `DROP TABLE if exists movielist; CREATE TABLE movielist(id INT NOT NULL AUTO_INCREMENT, releaseYear VARCHAR(255), title VARCHAR(255), marvelLink VARCHAR(2000), PRIMARY KEY (id));
     INSERT INTO movielist (releaseYear, title, marvelLink)
     VALUES
       ('2023', 'Ant-Man and the Wasp: Quantumania', 'https://www.marvel.com/movies/ant-man-and-the-wasp-quantumania'),
@@ -30,10 +29,10 @@ con.connect(function (err) {
       ('2021', 'Eternals', 'https://www.marvel.com/movies/eternals" target="_blank'),
       ('2021', 'Shang-Chi and the Legend of the Ten Rings', 'https://www.marvel.com/movies/shang-chi-and-the-legend-of-the-ten-rings'),
       ('2021', 'Black Widow', 'https://www.marvel.com/movies/black-widow'); 
-    ";
+    `;
   con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("Table creation `items` was successful!");
+    console.log("Table creation `movielist` was successful!");
 
     console.log("Closing...");
   });
