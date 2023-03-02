@@ -5,19 +5,19 @@ const db = require("../model/helper");
 // REMEMBER!! ROUTES START WITH /favorites
 // DB STRUCTURE mysql/marvel/favorites/id, name
 // REMEMBER!! ROUTES START WITH /movielist
-// DB STRUCTURE mysql/marvel/movielist/id, name, movieOne, movieTwo, movieThree
+// DB STRUCTURE mysql/marvel/movielist/id, releaseYear, title, marvelLink
 
 /*router.listen(3000, () => {
   console.log("Server listening to http://localhost:3000");
 });
-*/
 
-/*router.get("/", (req, res) => {
+
+router.get("/", (req, res) => {
   res.send("Hello");
 });
 */
 
-function getHeroes(req, res) {
+function getMovieList(req, res) {
   db("SELECT * FROM favorites")
     .then((results) => {
       res.send(results.data);
@@ -25,9 +25,9 @@ function getHeroes(req, res) {
     .catch((err) => res.status(500).send(err));
 }
 
-// GET ALL SUPERHEROES
-router.get("/", function (req, res) {
-  getHeroes(req, res);
+// GET ALL TIMELINE INFO
+router.get("/movielist", function (req, res) {
+  getMovieList(req, res);
 });
 
 // GET ONE SUPERHERO
@@ -38,7 +38,7 @@ router.get("/", function (req, res) {
     })
     .catch((err) => res.status(500).send(err));
 });
-*/
+
 
 // ADD A SUPERHERO
 router.post("/", function (req, res) {
@@ -62,7 +62,7 @@ router.delete("/:id", function (req, res) {
 });
 
 // EXTERNAL API
-/*
+
 router.post("/marvel", async function (req, res, next) {
   const { name } = req.body; // GETS DATA RE FAVORITE ADDED
   const sql = `INSERT INTO marvel (name)
