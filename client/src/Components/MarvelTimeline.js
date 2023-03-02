@@ -28,13 +28,19 @@ export default function MarvelTimeline() {
       <div className="timeline">
         <div className="container">
           <div className="content">
-            <h6 key={movies.id}>{movies.releaseYear}</h6>
-            <p key={movies.id}>{movies.title}</p>
-            <p key={movies.id}>
-              <a href="{movies.marveLink}" target="_blank">
-                Explore More at Marvel.com
-              </a>
-            </p>
+            {movies.map((movie) => (
+              <div key={movie.id}>
+                <h6>{movie.releaseYear}</h6>
+
+                <p>{movie.title}</p>
+
+                <p>
+                  <a href={movie.marvelLink} target="_blank">
+                    Explore More at Marvel.com
+                  </a>
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
