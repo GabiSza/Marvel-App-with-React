@@ -43,19 +43,8 @@ export default function MarvelTimeline() {
             ))}
           </div>
         </div>
-
-        <div className="container right">
-          <div className="content">
-            <h6>RELEASE YEAR</h6>
-            <p>MOVIE TITLE</p>
-            <p>
-              <a href="" target="_blank">
-                Explore More at Marvel.com
-              </a>
-            </p>
-          </div>
-        </div>
       </div>
+      
     </div>
   );
 }

@@ -41,7 +41,7 @@ function App() {
                 tabindex="-1"
                 aria-disabled="true"
               >
-                Watch More!
+                MCU Movie Trailers
               </a>
             </div>
           </div>
