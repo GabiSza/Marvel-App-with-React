@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
 });
 
 function getMovieList(req, res) {
-  db("SELECT * FROM favorites")
+  db("SELECT * FROM movielist")
     .then((results) => {
       res.send(results.data);
     })
@@ -32,7 +32,7 @@ router.get("/movielist", async function (req, res) {
 
 // GET ONE SUPERHERO
 /*router.get("/:name", function (req, res) {
-  db(`SELECT * FROM favorites WHERE name = ${req.params.name};`)
+  db(`SELECT * FROM movielist WHERE name = ${req.params.name};`)
     .then((results) => {
       res.send(results.data);
     })
@@ -43,7 +43,7 @@ router.get("/movielist", async function (req, res) {
 // ADD A SUPERHERO
 router.post("/", function (req, res) {
   let { name } = req.body;
-  let sql = `INSERT INTO favorites (name) VALUES ('${name}');`;
+  let sql = `INSERT INTO movielist (name) VALUES ('${name}');`;
   db(sql)
     .then((results) => {
       getHeroes(req, res);
@@ -53,7 +53,7 @@ router.post("/", function (req, res) {
 
 // DELETE A SUPERHERO
 router.delete("/:id", function (req, res) {
-  let sql = `DELETE FROM favorites WHERE id = ${req.params.id};`;
+  let sql = `DELETE FROM movielist WHERE id = ${req.params.id};`;
   db(sql)
     .then((results) => {
       getHeroes(req, res);
@@ -70,7 +70,7 @@ router.post("/marvel", async function (req, res, next) {
 
 try {
     const result = await db("SELECT * FROM marvel");
-    const favorites = result.data;
+    const movielist = result.data;
     res.send(marvel); // CHECK EVERYTHING IS MATCHING WITH FRONT END TERMS
   } catch (err) {
     res.status(500).send({ error: err.message });
@@ -80,7 +80,7 @@ try {
   try {
     await db(sql);
     const result = await db("SELECT * FROM marvel");
-    const favorites = results.data;
+    const movielist = results.data;
     res.send(marvel);
   } catch (err) {
     res.status(500).send({ error: err.message });
