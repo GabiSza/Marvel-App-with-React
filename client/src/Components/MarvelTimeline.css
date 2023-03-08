@@ -1,11 +1,11 @@
 /* The actual timeline (the vertical ruler) */
 
 h2 {
-  color: white;
+  color: black;
   text-align: center;
 }
 
-h6 {
+/* h6 {
   color: red;
 }
 
@@ -21,7 +21,7 @@ h6 {
 }
 
 /* VERTICAL LINE */
-.timeline::after {
+/* .timeline::after {
   content: "";
   position: absolute;
   width: 6px;
@@ -31,35 +31,36 @@ h6 {
   left: 50%;
   margin-left: -3px;
   opacity: 0.2;
-}
+} */
 
 /* Container around content */
-.container {
+/* .container {
   padding: 10px 40px;
   position: relative;
   background-color: inherit;
   width: 50%;
 }
-
+ */
 /* Place the container to the left */
-.left {
+/* .left {
   left: 0;
-}
+} */
 
 /* Place the container to the right */
-.right {
+/* .right {
   left: 50%;
-}
+} */
 
 /* The actual content */
-.content {
+/* .content {
   padding: 20px 30px;
   background-color: white;
   position: relative;
   border-radius: 6px;
 }
-
+ */
 /* Make all right containers behave like the left ones */
-.right {
+/* .right {
   left: 0%;
-}
+} */
+ /* */ 

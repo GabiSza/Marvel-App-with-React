@@ -79,7 +79,7 @@ export default function MarvelList() {
             onChange={handleChange}
           />
           <button className="btn btn-primary ml-3" type="submit">
-            Add Favorite Superheroes
+            Find my Superhero
           </button>
         </form>
       </section>
