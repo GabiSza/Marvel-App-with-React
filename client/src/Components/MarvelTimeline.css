@@ -5,8 +5,10 @@
 }
 
 h2 {
-  color: black;
+  color: grey;
   text-align: center;
+  font-size: 50px;
+ 
 }
 
 /* h6 {

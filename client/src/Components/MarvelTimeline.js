@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import { Link } from 'react-router-dom';
-import {IoMdFilm, IoIosImage, IoMdFlash, IoIosBook} from "react-icons/io";
+import {IoIosPlay} from "react-icons/io";
+import { NavLink } from 'react-router-dom';
+import {MdSwipeLeft} from "react-icons/md";
 
 
 
@@ -30,7 +32,12 @@ export default function MarvelTimeline() {
   return (
   
       <Wrapper>
-      <h2>Marvel Cinematic Universe Timeline</h2>
+      <h2>
+      
+      Marvel Cinematic Universe Timeline
+      <MdSwipeLeft />
+      </h2>
+
       <Splide 
         options={{
           perPage:3,
@@ -49,9 +56,10 @@ export default function MarvelTimeline() {
                 
                 <p >
                 
-                  <Link to={movie.marvelLink} target="_blank"> 
-                  <IoMdFilm />
-                  <h4> SPOILER </h4>  </Link> 
+                  <SLink to={movie.marvelLink} target="_blank"> 
+                  <IoIosPlay size={70} />
+                  
+                  </SLink> 
                   
                   </p> 
                   <title>{movie.releaseYear} </title>
@@ -71,6 +79,34 @@ const Wrapper = styled.div`
 margin: 4rem 0rem;
 background-color: white;
 `;
+
+const SLink = styled(NavLink)`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+
+text-decoration: none;
+background: linear-gradient( 
+  #bdc3c7, 
+  #2c3e50);
+width: 6rem;
+opacity: 0.75;
+height: 6rem;
+cursor; pointer;
+transform: scale(0.8);
+margin-bottom: 220px;
+
+
+h4 {
+  color: white;
+  font-size: 0.8rem;
+}
+svg {
+  color: white;
+  font-size: 1.5rem;
+}`;
 const Card = styled.div`
 font-family: 'Rubik Iso', cursive;
 min-height: 35rem;
@@ -120,11 +156,12 @@ title{
   justify-content: center;
   align-items: center;
   position: relative;
-  color:#E5E4E2;
+  color:grey;
   font-size: 2rem;
   text-align: center;
   font-family: 'Rubik Iso', cursive;
   top: 10%;
+  margin-top: 50px;
  }
 `;
 
