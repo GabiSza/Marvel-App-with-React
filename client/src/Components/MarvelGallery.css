@@ -26,3 +26,6 @@ img {
 .hide {
   display: none;
 }
+.col {
+  font-size: medium;
+}

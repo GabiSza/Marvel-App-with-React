@@ -115,7 +115,7 @@ function MarvelGallery() {
                   <h3>Who is {featuredHero.title}?</h3>
                   <p>{featuredHero.description} </p>
                 </div>
-                <div className="col" font-size={20}>
+                <div className="col">
                   <h3>See {featuredHero.title} In These Movies </h3>
                   <p>{featuredHero.movieList1}</p>
                   <p>{featuredHero.movieList2}</p>

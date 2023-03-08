@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"; import "./MarvelTimeline.css
 import styled from 'styled-components';
 import { Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
+import { Link } from 'react-router-dom';
+import {IoMdFilm, IoIosImage, IoMdFlash, IoIosBook} from "react-icons/io";
 
 
 
@@ -47,10 +49,12 @@ export default function MarvelTimeline() {
                 
                 <p >
                 
-                  <a href={movie.marvelLink} target="_blank"> {movie.title}  </a> 
+                  <Link to={movie.marvelLink} target="_blank"> 
+                  <IoMdFilm />
+                  <h4> SPOILER </h4>  </Link> 
                   
                   </p> 
-                  <title>({movie.releaseYear}) </title>
+                  <title>{movie.releaseYear} </title>
                 <Gradient />
                
                 </Card>
@@ -68,6 +72,7 @@ margin: 4rem 0rem;
 background-color: white;
 `;
 const Card = styled.div`
+font-family: 'Rubik Iso', cursive;
 min-height: 35rem;
 border-radius: 2rem;
 overflow: hidden;
@@ -90,9 +95,8 @@ p{
   transform: translate(-50%, 0%);
   color: white;
   width: 100%;
-  font: Bubblegum Sans;
+  font-family: 'Rubik Iso', cursive;
   text-align: center;
-  font-weight: 600;
   font-size: 2rem;
   height: 40%;
   display: flex;
@@ -101,22 +105,27 @@ p{
 }
 a{
   position: absolute;
-  color:white;
+  color: #E5E4E2;
   font-size: 2rem;
+  font-family: 'Rubik Iso', cursive;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 100;
 }
 title{
-  position: relative;
-  color:white;
-  font-size: 2rem;
-  text-align: center;
+  
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  position: relative;
+  color:#E5E4E2;
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Rubik Iso', cursive;
+  top: 10%;
+ }
 `;
 
 const Gradient = styled.div`

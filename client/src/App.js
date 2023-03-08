@@ -89,7 +89,7 @@ function App() {
 }
 
 const Wrapper = styled.div`
-font-family: 'Shantell Sans', cursive;
+font-family: 'Tilt Neon', cursive;
 font-size: 30px;
 text-align: center;
 `;
@@ -102,7 +102,7 @@ align-items: center;
 border-radius: 50%;
 margin-right: 2rem;
 text-decoration: none;
-background: linear-gradient(35deg,#44A08D, #093637);
+background: linear-gradient(35deg,#F00000, #DC281E);
 width: 9rem;
 height: 9rem;
 cursor; pointer;
