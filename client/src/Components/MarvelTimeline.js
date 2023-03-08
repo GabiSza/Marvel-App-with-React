@@ -4,6 +4,7 @@ import { Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
 
+
 //let emptyTimeline = { id: "", releaseYear: "", title: "", marvelLink: "" };
 
 export default function MarvelTimeline() {
@@ -47,9 +48,9 @@ export default function MarvelTimeline() {
                 <p >
                 
                   <a href={movie.marvelLink} target="_blank"> {movie.title}  </a> 
-                 <title>({movie.releaseYear}) </title> 
+                  
                   </p> 
-                
+                  <title>({movie.releaseYear}) </title>
                 <Gradient />
                
                 </Card>
@@ -64,7 +65,7 @@ export default function MarvelTimeline() {
 }
 const Wrapper = styled.div`
 margin: 4rem 0rem;
-background-color: #1F8A70;
+background-color: white;
 `;
 const Card = styled.div`
 min-height: 35rem;
@@ -89,6 +90,7 @@ p{
   transform: translate(-50%, 0%);
   color: white;
   width: 100%;
+  font: Bubblegum Sans;
   text-align: center;
   font-weight: 600;
   font-size: 2rem;

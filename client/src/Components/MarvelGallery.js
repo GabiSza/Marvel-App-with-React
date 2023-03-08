@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./MarvelGallery.css";
+import {Link, useParams} from 'react-router-dom';
 
 function MarvelGallery() {
   //const [gallery, setGallery] = useState(true);
@@ -95,7 +96,7 @@ function MarvelGallery() {
   });
 
   return (
-    <div className="container-for-gallery">
+    <div className="container-for-gallery" >
       <div className="container-gallery">
         <div id="container-grid">
           <div id="grid">
@@ -112,9 +113,9 @@ function MarvelGallery() {
               <div className="row">
                 <div className="col">
                   <h3>Who is {featuredHero.title}?</h3>
-                  <p>{featuredHero.description}</p>
+                  <p>{featuredHero.description} </p>
                 </div>
-                <div className="col">
+                <div className="col" font-size={20}>
                   <h3>See {featuredHero.title} In These Movies </h3>
                   <p>{featuredHero.movieList1}</p>
                   <p>{featuredHero.movieList2}</p>

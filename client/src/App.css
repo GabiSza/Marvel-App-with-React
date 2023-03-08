@@ -1,5 +1,10 @@
+
+.font-link {
+  font-family: 'Shantell Sans', cursive;
+}
+
 body {
-  background-color: white
+  background-color: white;
 }
 
 img {
@@ -10,9 +15,15 @@ img {
 }
 
 .marvel-mini-banner {
-  height: 200px;
+  width: 100%;
+  height: 100px;
+  background-image: 'https://www.seekpng.com/png/detail/368-3684995_marvel-logo-marvel-comics.png';
+  background-size: auto;
+  background-position: center;
 }
-
+.nav {
+  text-align: center;
+}
 .img-nav {
   width: 10%;
   height: 10%;

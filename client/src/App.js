@@ -9,10 +9,21 @@ import "./App.css";
 import "./";
 import { Routes, Route, Link } from "react-router-dom";
 import {IoMdFilm, IoIosImage, IoMdFlash, IoIosBook} from "react-icons/io";
+import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
 
 
 function App() {
   return (
+    <Wrapper>
+      {/* <div className="marvel-mini-banner">
+        <img
+          src="https://www.seekpng.com/png/detail/368-3684995_marvel-logo-marvel-comics.png"
+          alt="MM logo"
+        />
+        
+      </div> */}
+     
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light bg-light" size={40}>
         <div className="container-fluid">
@@ -29,33 +40,38 @@ function App() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-link active" aria-current="page" href="#" >
+              
+            <SLink to={"./"}>
+             
                 <IoIosImage size={70} />
-                <Link to="/">Superhero Gallery</Link>
-              </a>
-              <a className="nav-link" href="#">
+               <h4>Superhero Gallery</h4>
+             </SLink>
+                
+              
+             <SLink to="/timeline">
                 <IoMdFilm  size={70}/>
-                <Link to="/timeline">MCU Timeline</Link>
-              </a>
-              <a className="nav-link" href="#">
+                <h4>MCU Timeline</h4>
+                </SLink>
+             
+
+                <SLink to="/list">
                 <IoMdFlash size={70} />
-                <Link to="/list">Find my Superhero</Link>
-              </a>
-              <a className="nav-link" href="#">
+                <h4>Find my Superhero</h4>
+                </SLink>
+            
+
+                <SLink to="/comics">
                 <IoIosBook size={70}/>
-                <Link to="/comics">Comics</Link>
-              </a>
+                <h4>Comics</h4>
+                </SLink>
+              <Logo>
+              <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Marvel-Comics-Logo.svg/1280px-Marvel-Comics-Logo.svg.png' /> 
+              </Logo>
             </div>
           </div>
         </div>
       </nav>
 
-      <div className="marvel-mini-banner">
-        <img
-          src="https://en.ephoto360.com/share_image/2023/03/63ff3925e58d8.jpg"
-          alt="MM logo"
-        />
-      </div>
 
       <>
         <Routes>
@@ -68,7 +84,57 @@ function App() {
         </Routes>
       </>
     </div>
+    </Wrapper>
   );
 }
 
+const Wrapper = styled.div`
+font-family: 'Shantell Sans', cursive;
+font-size: 30px;
+text-align: center;
+`;
+
+const SLink = styled(NavLink)`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+margin-right: 2rem;
+text-decoration: none;
+background: linear-gradient(35deg,#44A08D, #093637);
+width: 9rem;
+height: 9rem;
+cursor; pointer;
+transform: scale(0.8);
+
+
+h4 {
+  color: white;
+  font-size: 0.8rem;
+}
+svg {
+  color: white;
+  font-size: 1.5rem;
+}
+&.active {
+  background: linear-gradient( 
+    #fceabb, 
+    #f8b500);
+  svg {
+      color: white;
+  }
+  h4 {
+      color: white;
+  }
+}
+`;
+const Logo = styled.div`
+height: 100px;
+weight:175px;
+margin-left: auto;
+position:absolute;
+left: 1200px;
+top: 30px;
+`;
 export default App;

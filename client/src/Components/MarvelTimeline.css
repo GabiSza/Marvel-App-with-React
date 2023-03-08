@@ -1,5 +1,9 @@
 /* The actual timeline (the vertical ruler) */
 
+.font-link {
+  font-family: 'Shantell Sans', cursive;
+}
+
 h2 {
   color: black;
   text-align: center;
